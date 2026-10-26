@@ -17,7 +17,9 @@
 
 #include <filesystem>
 #include <fstream>
+#include <functional>
 #include <ios>
+#include <map>
 #include <memory>
 #include <optional>
 #include <set>
@@ -180,6 +182,7 @@ struct LiteRtLmSettings {
   bool enable_npu_debug_logging = false;
   bool use_lazy_warmup_for_npu = false;
   bool disable_input_prompt_as_hint = false;
+  std::map<std::string, std::string, std::less<>> custom_backend_options;
 };
 
 struct LitertLmMetrics {
